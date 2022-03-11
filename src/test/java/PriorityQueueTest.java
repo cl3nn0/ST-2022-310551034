@@ -11,21 +11,21 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class PriorityQueueTest {
     public static Stream<Arguments> streamProvider() {
         /* correct */
-        // return Stream.of(
-        //         Arguments.of(new int[] {1, 0, -1}, new int[] {-1, 0, 1}),
-        //         Arguments.of(new int[] {3, 8, 7, 4}, new int[] {3, 4, 7, 8}),
-        //         Arguments.of(new int[] {1, 2, 3, 4, 5}, new int[] {1, 2, 3, 4, 5}),
-        //         Arguments.of(new int[] {-1, -2, -3, -4, -5}, new int[] {-5, -4, -3, -2, -1}),
-        //         Arguments.of(new int[] {0, 6, 9, -2}, new int[] {-2, 0, 6, 9})
-        // );
-        /* fail */
         return Stream.of(
-                Arguments.of(new int[] {1, 0, -1}, new int[] {0, 0, 1}),
-                Arguments.of(new int[] {3, 8, 7, 4}, new int[] {4, 4, 7, 8}),
-                Arguments.of(new int[] {1, 2, 3, 4, 5}, new int[] {2, 2, 3, 4, 5}),
-                Arguments.of(new int[] {-1, -2, -3, -4, -5}, new int[] {-4, -4, -3, -2, -1}),
-                Arguments.of(new int[] {0, 6, 9, -2}, new int[] {-1, 0, 6, 9})
+                Arguments.of(new int[] {1, 0, -1}, new int[] {-1, 0, 1}),
+                Arguments.of(new int[] {3, 8, 7, 4}, new int[] {3, 4, 7, 8}),
+                Arguments.of(new int[] {1, 2, 3, 4, 5}, new int[] {1, 2, 3, 4, 5}),
+                Arguments.of(new int[] {-1, -2, -3, -4, -5}, new int[] {-5, -4, -3, -2, -1}),
+                Arguments.of(new int[] {0, 6, 9, -2}, new int[] {-2, 0, 6, 9})
         );
+        /* fail */
+        // return Stream.of(
+        //         Arguments.of(new int[] {1, 0, -1}, new int[] {0, 0, 1}),
+        //         Arguments.of(new int[] {3, 8, 7, 4}, new int[] {4, 4, 7, 8}),
+        //         Arguments.of(new int[] {1, 2, 3, 4, 5}, new int[] {2, 2, 3, 4, 5}),
+        //         Arguments.of(new int[] {-1, -2, -3, -4, -5}, new int[] {-4, -4, -3, -2, -1}),
+        //         Arguments.of(new int[] {0, 6, 9, -2}, new int[] {-1, 0, 6, 9})
+        // );
     }
 
     @ParameterizedTest(name="#{index} - Test with Argument={0},{1}")
